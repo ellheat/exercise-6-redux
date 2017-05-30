@@ -1,24 +1,20 @@
 import { Record } from 'immutable';
-import { createReducer, createActions } from 'reduxsauce';
+import { createReducer } from 'reduxsauce';
+
+import { localesActionsTypes } from './locales.actions';
 
 
-export const DEFAULT_LOCALE = 'en';
-
-export const { Types: LocalesTypes, Creators: LocalesActions } = createActions({
-  setLanguage: ['language'],
-}, { prefix: 'LOCALES_' });
-
-const LocalesRecord = new Record({
+const StateRecord = new Record({
   language: null,
 });
 
-export const INITIAL_STATE = new LocalesRecord({});
+const INITIAL_STATE = new StateRecord({});
 
-export const setLanguageHandler = (state = INITIAL_STATE, action) => state.set('language', action.language);
+const setLanguageHandler = (state = INITIAL_STATE, action) => state.set('language', action.payload);
 
-export const HANDLERS = {
-  [LocalesTypes.SET_LANGUAGE]: setLanguageHandler,
+const HANDLERS = {
+  [localesActionsTypes.SET_LANGUAGE]: setLanguageHandler,
 };
 
-export const reducer = createReducer(INITIAL_STATE, HANDLERS);
+export default createReducer(INITIAL_STATE, HANDLERS);
 

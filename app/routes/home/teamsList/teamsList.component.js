@@ -1,25 +1,28 @@
 import React, { PropTypes, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import messages from './maintainersList.messages';
-import { Maintainer } from '../maintainer/maintainer.component';
+import messages from './teamsList.messages';
 
 
-export class MaintainerList extends PureComponent {
+export default class TeamsList extends PureComponent {
   static propTypes = {
     items: PropTypes.object.isRequired,
   };
 
+  componentDidMount(){
+    console.log(this.props.items);
+  }
+
   render() {
     return (
-      <div className="maintainer-list">
-        <h2 className="maintainer-list__title">
+      <div className="teams-list">
+        <h2 className="teams-list__title">
           <FormattedMessage {...messages.title} />:
         </h2>
 
-        <ul>
+        <ul className="teams-list__items">
           {this.props.items.toArray().map((item, key) => (
-            <Maintainer key={key} data={item} />
+            <div key={key}>{item.get('name')}</div>
           ))}
         </ul>
       </div>

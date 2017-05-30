@@ -4,17 +4,10 @@ import { IntlProvider } from 'react-intl';
 import { get } from 'lodash';
 
 import { appLocales, translationMessages } from '../i18n';
-import { DEFAULT_LOCALE } from '../modules/locales/locales.redux';
+import { DEFAULT_LOCALE } from '../modules/locales/locales.constants';
 
 
-export class App extends PureComponent {
-  static propTypes = {
-    language: PropTypes.string,
-    router: PropTypes.object.isRequired,
-    setLanguage: PropTypes.func.isRequired,
-    children: PropTypes.node,
-  };
-
+class App extends PureComponent {
   componentWillMount() {
     const language = get(this.props.router, 'params.lang', DEFAULT_LOCALE);
 
@@ -51,3 +44,12 @@ export class App extends PureComponent {
     );
   }
 }
+
+App.propTypes = {
+  language: PropTypes.string,
+  router: PropTypes.object.isRequired,
+  setLanguage: PropTypes.func.isRequired,
+  children: PropTypes.node,
+};
+
+export default App;

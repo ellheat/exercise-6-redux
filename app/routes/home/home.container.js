@@ -1,21 +1,23 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { Home } from './home.component';
-import { MaintainersActions } from '../../modules/maintainers/maintainers.redux';
-import { selectMaintainersItems } from '../../modules/maintainers/maintainers.selectors';
-import { LocalesActions } from '../../modules/locales/locales.redux';
+import Home from './home.component';
+import { teamsActions } from '../../modules/teams/teams.actions';
+import {
+  selectTeamsList,
+} from '../../modules/teams/teams.selectors';
+import { localesActions } from '../../modules/locales/locales.actions';
 import { selectLocalesLanguage } from '../../modules/locales/locales.selectors';
 
+
 const mapStateToProps = createStructuredSelector({
-  items: selectMaintainersItems,
+  teams: selectTeamsList,
   language: selectLocalesLanguage,
+
 });
 
-export const mapDispatchToProps = (dispatch) => bindActionCreators({
-  fetchMaintainers: MaintainersActions.fetch,
-  setLanguage: LocalesActions.setLanguage,
-}, dispatch);
+export default connect(mapStateToProps, {
+  getTeams: teamsActions.getTeams,
+  setLanguage: localesActions.setLanguage,
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+})(Home);
