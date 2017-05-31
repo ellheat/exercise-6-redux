@@ -24,13 +24,7 @@ export default class Dashboard extends PureComponent {
         <Helmet
           title="Dashboard"
         />
-
-        <h1 className="dashboard__title">
-          <i className="dashboard__title-logo" />
-          <FormattedMessage {...messages.welcome} />
-        </h1>
-
-        <div className="dashboard__container">
+          <div className="dashboard__container">
 
           <div className="dashboard__container-teams">
             <TeamsList items={this.props.teams} />
