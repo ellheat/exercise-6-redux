@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import { toNumber, round } from 'lodash';
 
 const selectTeamsDomain = state => state.get('teams');
 

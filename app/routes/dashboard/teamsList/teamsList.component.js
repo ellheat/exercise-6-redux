@@ -7,12 +7,7 @@ export default class TeamsList extends PureComponent {
     items: PropTypes.object.isRequired,
   };
 
-  componentWillReceiveProps(){
-    console.log(this.props.items);
-  }
-
   render() {
-    console.log(this.props.items);
     return (
       <List>
         <ListSubHeader caption={'Explore teams!'} />
