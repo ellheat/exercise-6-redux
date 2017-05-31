@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
 
-import { mapDispatchToProps } from '../home.container';
+import { mapDispatchToProps } from '../dashboard.container';
 import { LocalesActions } from '../../../modules/locales/locales.redux';
 
 

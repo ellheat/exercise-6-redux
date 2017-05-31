@@ -4,10 +4,10 @@ import { FormattedMessage } from 'react-intl';
 import envConfig from 'env-config';
 import TeamsList from './teamsList/teamsList.component';
 
-import messages from './home.messages';
+import messages from './dashboard.messages';
 
 
-export default class Home extends PureComponent {
+export default class Dashboard extends PureComponent {
   static propTypes = {
     teams: PropTypes.object,
     getTeams: PropTypes.func.isRequired,
@@ -20,13 +20,13 @@ export default class Home extends PureComponent {
 
   render() {
     return (
-      <div className="home">
+      <div className="dashboard">
         <Helmet
-          title="Homepage"
+          title="Dashboard"
         />
 
-        <h1 className="home__title">
-          <i className="home__title-logo" />
+        <h1 className="dashboard__title">
+          <i className="dashboard__title-logo" />
           <FormattedMessage {...messages.welcome} />
         </h1>
 

@@ -42,7 +42,8 @@
     "test:clean": "rimraf ./coverage",
     "test:watch": "npm run test -- --watch --no-single-run",
     "test:junit": "npm test -- --reporter mocha-junit-reporter --reporter-options mochaFile=./junit/junitOutput.xml",
-    "test:coverage": "cross-env NODE_ENV=test nyc mocha --compilers js:babel-core/register internals/testing/test.index.spec.js --recursive \"app/**/*.spec.js\" "
+    "test:coverage": "cross-env NODE_ENV=test nyc mocha --compilers js:babel-core/register internals/testing/test.index.spec.js --recursive \"app/**/*.spec.js\" ",
+    "toolbox": "react-toolbox-themr"
   },
   "dllPlugin": {
     "path": "node_modules/react-boilerplate-dlls",
@@ -100,6 +101,8 @@
     "react-router-redux": "4.0.6",
     "react-router-scroll": "0.4.1",
     "react-tap-event-plugin": "^2.0.1",
+    "react-toolbox": "^2.0.0-beta.12",
+    "react-toolbox-themr": "^1.0.2",
     "redux": "3.6.0",
     "redux-devtools": "^3.3.2",
     "redux-devtools-dock-monitor": "^1.1.1",
@@ -159,6 +162,11 @@
     "null-loader": "0.1.1",
     "nyc": "^10.1.2",
     "offline-plugin": "4.5.2",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-each": "^0.10.0",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.5",
+    "postcss-mixins": "^6.0.0",
     "react-addons-test-utils": "15.4.1",
     "redux-saga-tester": "^1.0.197",
     "rimraf": "2.5.4",
@@ -172,5 +180,24 @@
     "webpack-dev-middleware": "1.9.0",
     "webpack-hot-middleware": "2.15.0",
     "webpack-spritesmith": "^0.3.1"
+  },
+  "reactToolbox": {
+    "include": [
+      "BUTTON",
+      "LIST",
+      "TABS",
+      "MENU",
+      "NAVIGATION",
+      "LINK",
+      "DROPDOWN"
+    ],
+    "customProperties": {
+      "animation-duration": "0.3s",
+      "color-accent": "var(--palette-pink-a200)",
+      "color-accent-dark": "var(--palette-pink-700)",
+      "color-primary-contrast": "var(--color-dark-contrast)",
+      "color-accent-contrast": "var(--color-dark-contrast)"
+    },
+    "output": "app/assets/react-toolbox"
   }
 }

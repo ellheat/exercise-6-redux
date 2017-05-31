@@ -5,8 +5,8 @@ import { spy } from 'sinon';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 
-import { Home } from '../home.component';
-import messages from '../home.messages';
+import { Home } from '../dashboard.component';
+import messages from '../dashboard.messages';
 import { LanguageSelector } from '../languageSelector/languageSelector.component';
 
 

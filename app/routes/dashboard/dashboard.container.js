@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import Home from './home.component';
+import Home from './dashboard.component';
 import { teamsActions } from '../../modules/teams/teams.actions';
 import {
   selectTeamsList,
