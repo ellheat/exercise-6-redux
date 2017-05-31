@@ -21,7 +21,6 @@ export default class TeamsList extends PureComponent {
             key={key}
             caption={item.get('name')}
             legend={item.get('shortName')}
-            rightIcon={'star'}
           />
         ))}
       </List>

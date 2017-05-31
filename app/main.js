@@ -11,6 +11,10 @@ import ReactDOM from 'react-dom';
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
 
+// React Toolbox
+
+import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
+
 // Import all the third party stuff
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
@@ -21,6 +25,7 @@ import FontFaceObserver from 'fontfaceobserver';
 import { useScroll } from 'react-router-scroll';
 import 'normalize.css/normalize.css';
 import './main.scss';
+
 
 // Import selector for `syncHistoryWithStore`
 import { selectLocationState } from './modules/router/router.selectors';
@@ -76,19 +81,21 @@ if (process.env.NODE_ENV) {
 
 const render = () => {
   ReactDOM.render(
-    <AppContainer>
-      <Provider store={store}>
-        <Router
-          history={history}
-          routes={routes}
-          render={
-            // Scroll to top when going to a new page, imitating default browser
-            // behaviour
-            applyRouterMiddleware(useScroll())
-          }
-        />
-      </Provider>
-    </AppContainer>,
+    <ThemeProvider>
+      <AppContainer>
+        <Provider store={store}>
+          <Router
+            history={history}
+            routes={routes}
+            render={
+              // Scroll to top when going to a new page, imitating default browser
+              // behaviour
+              applyRouterMiddleware(useScroll())
+            }
+          />
+        </Provider>
+      </AppContainer>
+    </ThemeProvider>,
     document.getElementById('app')
   );
 };

@@ -25,7 +25,7 @@ describe('Home: Component', () => {
 
   it('should render Home root', () => {
     const wrapper = shallow(component({}));
-    expect(wrapper.find('.home')).to.have.length(1);
+    expect(wrapper.find('.dashboard')).to.have.length(1);
   });
 
   it('should render <Helmet/>', () => {

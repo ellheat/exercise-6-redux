@@ -1,8 +1,8 @@
 import React, { PureComponent, PropTypes } from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import envConfig from 'env-config';
 import TeamsList from './teamsList/teamsList.component';
+import Content from './content/content.component';
 
 import messages from './dashboard.messages';
 
@@ -30,7 +30,15 @@ export default class Dashboard extends PureComponent {
           <FormattedMessage {...messages.welcome} />
         </h1>
 
-        <TeamsList items={this.props.teams} />
+        <div className="dashboard__container">
+
+          <div className="dashboard__container-teams">
+            <TeamsList items={this.props.teams} />
+          </div>
+          <div className="dashboard__container-content">
+            <Content />
+          </div>
+        </div>
       </div>
     );
   }

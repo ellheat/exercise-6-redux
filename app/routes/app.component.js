@@ -2,10 +2,11 @@ import React, { PropTypes, PureComponent } from 'react';
 import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 import { get } from 'lodash';
+import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
+import theme from './../assets/react-toolbox/theme';
 
 import { appLocales, translationMessages } from '../i18n';
 import { DEFAULT_LOCALE } from '../modules/locales/locales.constants';
-
 
 class App extends PureComponent {
   componentWillMount() {
@@ -38,7 +39,9 @@ class App extends PureComponent {
           locale={this.props.language}
           messages={translationMessages[this.props.language]}
         >
-          {React.Children.only(this.props.children)}
+          <ThemeProvider theme={theme}>
+            {React.Children.only(this.props.children)}
+          </ThemeProvider>
         </IntlProvider>
       </div>
     );

@@ -4,5 +4,5 @@ import Dashboard from './dashboard.container';
 
 
 export default (
-  <IndexRoute component={Home} />
+  <IndexRoute component={Dashboard} />
 );
