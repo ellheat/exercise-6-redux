@@ -1,5 +1,5 @@
 .dashboard {
-  padding: 40px;
+  padding: 0;
 }
 
 .dashboard__title {
@@ -23,5 +23,7 @@
 }
 
 .dashboard__container-content {
+  position: fixed;
+  right: 0;
   width: 80%;
 }
