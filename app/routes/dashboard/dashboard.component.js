@@ -1,10 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react';
 import Helmet from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
 import TeamsList from './teamsList/teamsList.component';
 import Content from './content/content.component';
-
-import messages from './dashboard.messages';
 
 
 export default class Dashboard extends PureComponent {

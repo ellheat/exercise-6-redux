@@ -5,26 +5,10 @@ import { get } from 'lodash';
 import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
 import theme from './../assets/react-toolbox/theme';
 
-import { appLocales, translationMessages } from '../i18n';
-import { DEFAULT_LOCALE } from '../modules/locales/locales.constants';
+import { translationMessages } from '../i18n';
 
 class App extends PureComponent {
-  componentWillMount() {
-    const language = get(this.props.router, 'params.lang', DEFAULT_LOCALE);
-
-    if (appLocales.indexOf(language) === -1) {
-      this.props.setLanguage(DEFAULT_LOCALE);
-      this.props.router.push('/404');
-    } else {
-      this.props.setLanguage(language);
-    }
-  }
-
   render() {
-    if (!this.props.language) {
-      return null;
-    }
-
     return (
       <div className="app">
         <Helmet
@@ -36,8 +20,8 @@ class App extends PureComponent {
         />
 
         <IntlProvider
-          locale={this.props.language}
-          messages={translationMessages[this.props.language]}
+          locale="en"
+          messages={translationMessages["en"]}
         >
           <ThemeProvider theme={theme}>
             {React.Children.only(this.props.children)}
@@ -49,9 +33,7 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  language: PropTypes.string,
   router: PropTypes.object.isRequired,
-  setLanguage: PropTypes.func.isRequired,
   children: PropTypes.node,
 };
 
