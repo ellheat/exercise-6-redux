@@ -54,7 +54,9 @@
       "express",
       "ip",
       "minimist",
-      "sanitize.css"
+      "sanitize.css",
+      "react-toolbox",
+      "react-toolbox-themr"
     ],
     "include": [
       "core-js",
