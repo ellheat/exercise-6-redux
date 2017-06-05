@@ -26,3 +26,22 @@ $margin: 15px;
 .team-images__image {
   max-width: 100%;
 }
+
+.team-images__loading {
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid transparent;
+  animation: borderBlink 0.5s linear infinite alternate;
+}
+
+@keyframes borderBlink {
+  0% {
+    border-color: transparentize(red, 0.1);
+  }
+  100% {
+    border-color: transparentize(red, 1);
+  }
+}

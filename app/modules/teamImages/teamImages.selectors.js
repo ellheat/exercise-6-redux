@@ -1,7 +1,12 @@
 import { createSelector } from 'reselect';
-import { selectTeamDomain } from '../team/team.selectors';
+
+export const selectTeamImagesDomain = state => state.get('teamImages');
 
 export const selectTeamImages = createSelector(
-  selectTeamDomain, state => state.get('images')
+  selectTeamImagesDomain, state => state.get('images')
+);
+
+export const selectTeamImagesLoading = createSelector(
+  selectTeamImagesDomain, state => state.get('isLoading')
 );
 

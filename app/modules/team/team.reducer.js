@@ -6,7 +6,6 @@ import { teamActionsTypes } from './team.actions';
 const StateRecord = new Record({
   name: null,
   title: null,
-  images: List(),
 });
 
 const INITIAL_STATE = new StateRecord();

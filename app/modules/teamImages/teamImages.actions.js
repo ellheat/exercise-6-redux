@@ -1,7 +1,7 @@
 import { createActions } from 'reduxsauce';
 
 const { Types, Creators } = createActions({
-  getTeamImages: null,
+  getTeamImages: ['payload'],
   getTeamImagesSuccess: ['payload'],
   getTeamImagesError: ['payload', 'error'],
 }, {});
