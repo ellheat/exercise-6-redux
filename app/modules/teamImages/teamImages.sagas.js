@@ -2,8 +2,20 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 import envConfig from '../../environment/base';
 import request from '../../utils/request';
 import { teamImagesActions, teamImagesActionsTypes } from './teamImages.actions';
+import { teamActionsTypes } from '../team/team.actions';
 
 export const DEFAULT_IMAGES_COUNT = 12;
+
+function urlWithParams(params) {
+  let uriParams = '';
+  for (let p in params) {
+    if (uriParams !== '') {
+      uriParams += '&';
+    }
+    uriParams += encodeURIComponent(p) + '=' + encodeURIComponent(params[p]);
+  }
+  return uriParams;
+}
 
 export function* getTeamImagesSaga(action) {
   const api = envConfig.imagesApi;
@@ -13,13 +25,7 @@ export function* getTeamImagesSaga(action) {
     page_size: action.payload.count || DEFAULT_IMAGES_COUNT,
   };
 
-  let uriParams = '';
-  for (let p in params) {
-    if (uriParams !== '') {
-      uriParams += '&';
-    }
-    uriParams += encodeURIComponent(p) + '=' + encodeURIComponent(params[p]);
-  }
+  let uriParams = urlWithParams(params);
   const url = `${api.baseUrl}${api.urls.search}?${uriParams}`;
   const sagaFetchingOptions = {
     method: 'GET',
@@ -36,6 +42,15 @@ export function* getTeamImagesSaga(action) {
   }
 }
 
+export function* updateTeamImagesSaga(action) {
+  const data = {
+    team: action.payload.title,
+  };
+
+  yield put(teamImagesActions.getTeamImages(data));
+}
+
 export default function* teamImagesSaga() {
   yield takeLatest(teamImagesActionsTypes.GET_TEAM_IMAGES, getTeamImagesSaga);
+  yield takeLatest(teamActionsTypes.CHANGE_TEAM, updateTeamImagesSaga);
 }
