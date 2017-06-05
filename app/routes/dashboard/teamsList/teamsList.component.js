@@ -1,6 +1,6 @@
 import React, { PropTypes, PureComponent } from 'react';
 import { List, ListSubHeader, ListItem } from 'react-toolbox/lib/list';
-import classnames from "classnames";
+import classnames from 'classnames';
 
 
 export default class TeamsList extends PureComponent {
@@ -15,7 +15,7 @@ export default class TeamsList extends PureComponent {
       name: item.get('shortName'),
       title: item.get('name'),
     });
-  }
+  };
 
   render() {
     return (
