@@ -7,7 +7,6 @@ import Helmet from 'react-helmet';
 
 import { Home } from '../dashboard.component';
 import messages from '../dashboard.messages';
-import { LanguageSelector } from '../languageSelector/languageSelector.component';
 
 
 describe('Home: Component', () => {
