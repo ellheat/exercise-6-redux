@@ -22,7 +22,7 @@ export function* getTeamImagesSaga(action) {
   const params = {
     fields: action.payload.fields || 'caption,display_set',
     phrase: action.payload.team,
-    page_size: action.payload.count || DEFAULT_IMAGES_COUNT,
+    ['page_size']: action.payload.count || DEFAULT_IMAGES_COUNT,
   };
 
   let uriParams = urlWithParams(params);
