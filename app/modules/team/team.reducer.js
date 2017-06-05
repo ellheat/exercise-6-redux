@@ -1,4 +1,4 @@
-import { fromJS, Record, List } from 'immutable';
+import { Record } from 'immutable';
 import { createReducer } from 'reduxsauce';
 
 import { teamActionsTypes } from './team.actions';

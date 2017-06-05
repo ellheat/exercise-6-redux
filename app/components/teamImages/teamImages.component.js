@@ -32,7 +32,7 @@ export default class TeamImages extends PureComponent {
       return null;
     }
 
-    return <div className="team-images__loading">Loading</div>
+    return <div className="team-images__loading">Loading</div>;
   };
 
   render() {
