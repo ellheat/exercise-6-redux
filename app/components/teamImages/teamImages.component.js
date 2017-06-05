@@ -6,7 +6,7 @@ export default class TeamImages extends PureComponent {
     let items = [];
     for (let i = 0; i < count; i++) {
       const item = (
-        <div className="team-images__item">
+        <div className="team-images__item" key={`team-${i}`}>
           <a className="team-images__link" href="http://lorempixel.com/600/300" target="_blank">
             <img className="team-images__image" src="http://lorempixel.com/600/300" alt="" />
           </a>
@@ -18,7 +18,7 @@ export default class TeamImages extends PureComponent {
   };
 
   render() {
-
+    console.log(this.props);
     return (
       <div className="team-images">
         { this.createItems(11) }
