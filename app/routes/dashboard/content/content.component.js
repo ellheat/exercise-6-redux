@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Tab, Tabs } from 'react-toolbox/lib/tabs';
+import TeamImages from '../../../components/teamImages/teamImages.container';
 
 import messages from './content.messages';
 
@@ -20,7 +21,9 @@ export default class Content extends PureComponent {
         <Tabs index={this.state.currentIndex} onChange={this.handleFixedTabChange} fixed>
           <Tab label={<FormattedMessage {...messages.map} />}><small>Map</small></Tab>
           <Tab label={<FormattedMessage {...messages.weather} />}><small>Weather content</small></Tab>
-          <Tab label={<FormattedMessage {...messages.photos} />}><small>Some photos</small></Tab>
+          <Tab label={<FormattedMessage {...messages.photos} />}>
+            <TeamImages />
+          </Tab>
         </Tabs>
       </section>
     );
