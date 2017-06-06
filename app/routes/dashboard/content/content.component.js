@@ -1,14 +1,13 @@
 import React, { PureComponent } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { Tab, Tabs } from 'react-toolbox/lib/tabs';
 import GoogleMaps from '../googleMaps/googleMaps.component';
-
-import messages from './content.messages';
+import TeamImages from '../../../components/teamImages/teamImages.container';
 
 export default class Content extends PureComponent {
 
   state = {
     currentIndex: 1,
+    fixedIndex: 2,
   };
 
   handleFixedTabChange = (index) => {
@@ -18,17 +17,15 @@ export default class Content extends PureComponent {
   render() {
     return (
       <section>
-
-        <Tabs index={this.state.currentIndex} onChange={this.handleFixedTabChange} fixed>
-          <Tab label={'Google Maps'}>
-            <small>
-              <GoogleMaps />
-            </small>
-          </Tab> <Tab label={<FormattedMessage {...messages.weather} />}>
-          <small>Weather content</small>
-        </Tab>
-          <Tab label={<FormattedMessage {...messages.photos} />}>
-            <small>Some photos</small>
+        <Tabs index={this.state.fixedIndex} onChange={this.handleFixedTabChange} fixed>
+          <Tab label= {'Google Maps'}>
+            <GoogleMaps />
+          </Tab>
+          <Tab label={'Weather'}>
+            <small>Some weather</small>
+          </Tab>
+          <Tab label={'Images'}>
+            <TeamImages />
           </Tab>
         </Tabs>
       </section>

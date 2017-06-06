@@ -1,0 +1,47 @@
+$border-color: #ccc;
+$margin: 15px;
+
+.team-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-images__item {
+  flex-basis: calc(25% - (#{$margin}*2));
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: $margin;
+}
+.team-images__link {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid $border-color;
+  text-align: center;
+  transition: background-color 0.24s ease;
+
+  &:hover {
+    background-color: transparentize($border-color, 0.7);
+  }
+}
+.team-images__image {
+  max-width: 100%;
+}
+
+.team-images__loading {
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid transparent;
+  animation: borderBlink 0.5s linear infinite alternate;
+}
+
+@keyframes borderBlink {
+  0% {
+    border-color: transparentize(red, 0.1);
+  }
+  100% {
+    border-color: transparentize(red, 1);
+  }
+}

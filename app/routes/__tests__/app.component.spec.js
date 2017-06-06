@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 
 import { translationMessages } from '../../i18n';
-import { App } from '../app.component';
+import App from '../app.component';
 
 
 describe('App: Component', () => {
@@ -30,10 +30,10 @@ describe('App: Component', () => {
     </App>
   );
 
-  it('should not render App when language is not set', () => {
-    const wrapper = shallow(component({ language: undefined }));
-    expect(wrapper.find('.app')).to.have.length(0);
-  });
+  // it('should not render App when language is not set', () => {
+  //   const wrapper = shallow(component({ language: undefined }));
+  //   expect(wrapper.find('.app')).to.have.length(0);
+  // });
 
   it('should render App when language is set', () => {
     const wrapper = shallow(component({ language: 'en' }));
@@ -70,30 +70,5 @@ describe('App: Component', () => {
   it('should render children inside <IntlProvider/>', () => {
     const wrapper = shallow(component({}));
     expect(wrapper.find(IntlProvider).contains(children)).to.be.true;
-  });
-
-  it('should redirect to /404 when given locale doesn\'t exist', () => {
-    const router = {
-      params: {
-        lang: 'non-existing-locale',
-      },
-      push: spy(),
-    };
-
-    mount(component({ router }));
-    expect(router.push.firstCall.args[0]).to.equal('/404');
-  });
-
-  it('should set proper language from param', () => {
-    const setLanguage = spy();
-    const router = {
-      params: {
-        lang: 'de',
-      },
-      push: spy(),
-    };
-
-    mount(component({ router, setLanguage }));
-    expect(setLanguage.firstCall.args[0]).to.equal('de');
   });
 });

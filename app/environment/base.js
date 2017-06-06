@@ -6,4 +6,11 @@ export default {
       teams: '/competitions/398/teams',
     },
   },
+  imagesApi: {
+    key: 'rj5w8w45nz3sfjnbwkxpwx27',
+    baseUrl: 'https://api.gettyimages.com/v3',
+    urls: {
+      search: '/search/images',
+    },
+  },
 };
