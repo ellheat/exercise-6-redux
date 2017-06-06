@@ -6,7 +6,6 @@ import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 
 import { translationMessages } from '../../i18n';
-import { DEFAULT_LOCALE } from '../../modules/locales/locales.redux';
 import { App } from '../app.component';
 
 
@@ -83,17 +82,6 @@ describe('App: Component', () => {
 
     mount(component({ router }));
     expect(router.push.firstCall.args[0]).to.equal('/404');
-  });
-
-  it('should set DEFAULT_LOCALE when no lang param is given', () => {
-    const setLanguage = spy();
-    const router = {
-      params: {},
-      push: spy(),
-    };
-
-    mount(component({ router, setLanguage }));
-    expect(setLanguage.firstCall.args[0]).to.equal(DEFAULT_LOCALE);
   });
 
   it('should set proper language from param', () => {

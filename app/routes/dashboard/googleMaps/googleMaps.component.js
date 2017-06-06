@@ -1,10 +1,8 @@
 import React, { PureComponent } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 export default class googleMaps extends PureComponent {
-  static defaultProps = {
+  static propTypes = {
     center: { lat: 59.95, lng: 30.33 },
     zoom: 11,
   };
@@ -23,11 +21,6 @@ export default class googleMaps extends PureComponent {
           language: 'pl',
         }}
       >
-        <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text={'Manchester City'}
-        />
       </GoogleMapReact>
     );
   }

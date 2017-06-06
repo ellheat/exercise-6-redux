@@ -1,6 +1,6 @@
-import React, {PureComponent} from 'react';
-import {FormattedMessage} from 'react-intl';
-import {Tab, Tabs} from 'react-toolbox/lib/tabs';
+import React, { PureComponent } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { Tab, Tabs } from 'react-toolbox/lib/tabs';
 import GoogleMaps from '../googleMaps/googleMaps.component';
 
 import messages from './content.messages';
