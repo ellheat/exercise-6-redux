@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { Tab, Tabs } from 'react-toolbox/lib/tabs';
-import GoogleMaps from '../googleMaps/googleMaps.component';
 import PositionTeam from '../../../components/positionTeam/positionTeam.container';
 import TeamImages from '../../../components/teamImages/teamImages.container';
 

@@ -1,4 +1,4 @@
-import React, {PropTypes, PureComponent} from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import _isUndefined from 'lodash/isUndefined';
 import GoogleMapReact from 'google-map-react';
 
@@ -30,7 +30,6 @@ export default class PositionTeam extends PureComponent {
   };
 
   render() {
-    console.log(this.props.results[0]);
     if (_isUndefined(this.props.results)) {
       return null;
     }
