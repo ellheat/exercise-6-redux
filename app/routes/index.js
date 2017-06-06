@@ -2,12 +2,12 @@ import React from 'react';
 import { Route } from 'react-router';
 
 import App from './app.container';
-import HomeRoute from './home';
+import DashboardRoute from './dashboard';
 import NotFoundRoute from './notFound';
 
 const routes = (
   <Route>
-    {HomeRoute}
+    {DashboardRoute}
 
     <Route path="404">
       {NotFoundRoute}

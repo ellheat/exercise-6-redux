@@ -1,4 +1,7 @@
 {
   "home.maintainerList.title": "Maintainers",
-  "home.welcome": "Welcome to Apptension React Boilerplate!"
+  "home.welcome": "Welcome to Sergusie Team Application!",
+  "content.map": "Map",
+  "content.weather": "Weather",
+  "content.photos": "Photos"
 }

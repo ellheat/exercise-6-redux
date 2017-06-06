@@ -3,11 +3,11 @@ import { createReducer } from 'reduxsauce';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
 
-const RouterRecord = new Record({
+const StateRecord = new Record({
   locationBeforeTransitions: null,
 });
 
-export const INITIAL_STATE = new RouterRecord({});
+export const INITIAL_STATE = new StateRecord({});
 
 export const locationChangeHandler = (state = INITIAL_STATE, action) => state.merge({
   locationBeforeTransitions: action.payload,
@@ -17,4 +17,4 @@ export const HANDLERS = {
   [LOCATION_CHANGE]: locationChangeHandler,
 };
 
-export const reducer = createReducer(INITIAL_STATE, HANDLERS);
+export default createReducer(INITIAL_STATE, HANDLERS);

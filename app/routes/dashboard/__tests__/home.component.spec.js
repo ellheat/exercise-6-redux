@@ -5,9 +5,8 @@ import { spy } from 'sinon';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 
-import { Home } from '../home.component';
-import messages from '../home.messages';
-import { MaintainerList } from '../maintainerList/maintainerList.component';
+import { Home } from '../dashboard.component';
+import messages from '../dashboard.messages';
 import { LanguageSelector } from '../languageSelector/languageSelector.component';
 
 
@@ -26,7 +25,7 @@ describe('Home: Component', () => {
 
   it('should render Home root', () => {
     const wrapper = shallow(component({}));
-    expect(wrapper.find('.home')).to.have.length(1);
+    expect(wrapper.find('.dashboard')).to.have.length(1);
   });
 
   it('should render <Helmet/>', () => {
@@ -51,16 +50,6 @@ describe('Home: Component', () => {
     expect(wrapper.find('.home__title').find(FormattedMessage).prop('id')).to.equal(messages.welcome.id);
   });
 
-  it('should render <MaintainerList />', () => {
-    const wrapper = shallow(component({}));
-    expect(wrapper.find(MaintainerList)).to.have.length(1);
-  });
-
-  it('should pass items prop to <MaintainerList />', () => {
-    const wrapper = shallow(component({}));
-    expect(wrapper.find(MaintainerList).prop('items')).to.equal(defaultProps.items);
-  });
-
   it('should render <LanguageSelector />', () => {
     const wrapper = shallow(component({}));
     expect(wrapper.find(LanguageSelector)).to.have.length(1);
@@ -76,22 +65,5 @@ describe('Home: Component', () => {
 
     languageSelectorProps.setLanguage();
     expect(setLanguage.calledOnce).to.be.true;
-  });
-
-  it('should dispatch fetchMaintainers action on mount', () => {
-    const fetchMaintainers = spy();
-    shallow(component({ fetchMaintainers }));
-
-    expect(fetchMaintainers.firstCall.args[0]).to.equal(defaultProps.language);
-  });
-
-  it('should dispatch fetchMaintainers action on language change', () => {
-    const fetchMaintainers = spy();
-    const newLanguage = 'de';
-    const wrapper = shallow(component({ fetchMaintainers, language: 'en' }));
-    fetchMaintainers.reset();
-    wrapper.setProps({ language: newLanguage });
-
-    expect(fetchMaintainers.firstCall.args[0]).to.equal(newLanguage);
   });
 });

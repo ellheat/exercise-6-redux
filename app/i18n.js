@@ -1,14 +1,11 @@
 import { addLocaleData } from 'react-intl';
 import enLocaleData from 'react-intl/locale-data/en';
-import deLocaleData from 'react-intl/locale-data/de';
-
-import { DEFAULT_LOCALE } from '../app/modules/locales/locales.redux';
 
 import enTranslationMessages from './translations/en.json';
-import deTranslationMessages from './translations/de.json';
 
 addLocaleData(enLocaleData);
-addLocaleData(deLocaleData);
+
+const DEFAULT_LOCALE = 'en';
 
 export const appLocales = [
   'en',
@@ -29,5 +26,4 @@ export const formatTranslationMessages = (locale, messages) => {
 
 export const translationMessages = {
   en: formatTranslationMessages('en', enTranslationMessages),
-  de: formatTranslationMessages('de', deTranslationMessages),
 };
