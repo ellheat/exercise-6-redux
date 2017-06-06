@@ -1,21 +1,11 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
+import { stringify } from 'query-string';
 import envConfig from '../../environment/base';
 import request from '../../utils/request';
 import { teamImagesActions, teamImagesActionsTypes } from './teamImages.actions';
 import { teamActionsTypes } from '../team/team.actions';
 
 export const DEFAULT_IMAGES_COUNT = 12;
-
-function urlWithParams(params) {
-  let uriParams = '';
-  for (let p in params) {
-    if (uriParams !== '') {
-      uriParams += '&';
-    }
-    uriParams += encodeURIComponent(p) + '=' + encodeURIComponent(params[p]);
-  }
-  return uriParams;
-}
 
 export function* getTeamImagesSaga(action) {
   const api = envConfig.imagesApi;
@@ -25,7 +15,7 @@ export function* getTeamImagesSaga(action) {
     ['page_size']: action.payload.count || DEFAULT_IMAGES_COUNT,
   };
 
-  let uriParams = urlWithParams(params);
+  let uriParams = stringify(params);
   const url = `${api.baseUrl}${api.urls.search}?${uriParams}`;
   const sagaFetchingOptions = {
     method: 'GET',
