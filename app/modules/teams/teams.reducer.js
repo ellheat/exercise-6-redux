@@ -10,12 +10,10 @@ const StateRecord = new Record({
 
 const INITIAL_STATE = new StateRecord();
 
-const teamsSuccess = (state = INITIAL_STATE, action) => state.set('list', fromJS(action.payload.teams));
-const teamsError = (state = INITIAL_STATE, action) => state.set('error', action.payload.error);
+const teamsSuccess = (state, action) => state.set('list', fromJS(action.payload.teams));
+const teamsError = (state, action) => state.set('error', action.payload.error);
 
-const HANDLERS = {
+export default createReducer(INITIAL_STATE, {
   [teamsActionsTypes.GET_TEAMS_SUCCESS]: teamsSuccess,
   [teamsActionsTypes.GET_TEAMS_ERORR]: teamsError,
-};
-
-export default createReducer(INITIAL_STATE, HANDLERS);
+});
