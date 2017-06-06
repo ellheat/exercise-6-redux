@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 export default class googleMaps extends PureComponent {
-  static propTypes = {
+  static defaultProps = {
     center: { lat: 59.95, lng: 30.33 },
     zoom: 11,
   };

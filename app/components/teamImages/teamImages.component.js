@@ -15,6 +15,7 @@ export default class TeamImages extends PureComponent {
 
   getThumb = (image) => {
     const thumb = image.get('display_sizes').findEntry((item) => {
+      console.log(item.get('name'));
       return item.get('name') === 'thumb';
     })[1];
     return thumb.get('uri');
