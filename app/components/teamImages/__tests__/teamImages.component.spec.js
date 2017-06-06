@@ -15,34 +15,34 @@ describe('teamImages: Component', () => {
     getImages: () => {},
   };
 
-  const Component = (props) => (
+  const component = (props) => (
     <TeamImages {...defaultProps} {...props} />
   );
 
   it('should render root', () => {
-    const wrapper = shallow(Component());
+    const wrapper = shallow(component());
     expect(wrapper.find('.team-images')).to.have.length(1);
   });
 
   it('should not render loading', () => {
-    const wrapper = shallow(Component());
+    const wrapper = shallow(component());
     expect(wrapper.find('.team-images__loading')).to.have.length(0);
   });
 
   it('should render loading', () => {
-    const wrapper = shallow(Component({ isLoading: true }));
+    const wrapper = shallow(component({ isLoading: true }));
     expect(wrapper.find('.team-images__loading')).to.have.length(1);
   });
 
   it('should call getImages', () => {
     const getImages = spy();
-    shallow(Component({ getImages }));
+    shallow(component({ getImages }));
     expect(getImages.calledOnce).to.be.true;
   });
 
   it('should pass params to getImages', () => {
     const getImages = spy();
-    shallow(Component({ getImages, team: 'Aston' }));
+    shallow(component({ getImages, team: 'Aston' }));
     expect(getImages.firstCall.args).to.deep.equal([{ team: 'Aston' }]);
   });
 
@@ -83,7 +83,7 @@ describe('teamImages: Component', () => {
         ],
       },
     ]);
-    const wrapper = shallow(Component({ images }));
+    const wrapper = shallow(component({ images }));
     expect(wrapper.find('.team-images__item')).to.have.length(2);
     expect(wrapper.find('.team-images__link')).to.have.length(2);
     expect(wrapper.find('.team-images__image')).to.have.length(2);
