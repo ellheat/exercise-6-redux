@@ -2,7 +2,7 @@ import { createActions, createReducer } from 'reduxsauce';
 import { Record, fromJS } from 'immutable';
 
 export const { Types: WeatherTypes, Creators: WeatherActions } = createActions({
-  fetch: [],
+  fetch: ['lat', 'lng'],
   fetchSuccess: ['data'],
   fetchError: ['payload'],
 }, { prefix: 'WEATHER_' });
