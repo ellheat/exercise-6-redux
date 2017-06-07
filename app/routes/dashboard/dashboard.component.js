@@ -11,6 +11,7 @@ export default class Dashboard extends PureComponent {
     router: PropTypes.object.isRequired,
     changeTeam: PropTypes.func.isRequired,
     currentTeam: PropTypes.string,
+    stadium: PropTypes.object,
   };
 
   componentWillMount() {
@@ -33,7 +34,7 @@ export default class Dashboard extends PureComponent {
             />
           </div>
           <div className="dashboard__container-content">
-            <Content />
+            <Content stadium={stadium} />
           </div>
         </div>
       </div>

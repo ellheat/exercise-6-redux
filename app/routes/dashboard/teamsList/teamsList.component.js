@@ -14,6 +14,7 @@ export default class TeamsList extends PureComponent {
     this.props.onItemClick({
       name: item.get('shortName'),
       title: item.get('name'),
+      code: item.get('code'),
     });
   };
 

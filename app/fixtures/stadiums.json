@@ -1,17 +1,17 @@
-[
+[ 
   {
     "code": "MUFC",
-    "stadiumName": "Old Trafford",
+     "stadiumName": "Old Trafford",
     "city": "Manchester",
     "lat": 53.4630589,
-    "lng": -2.2935288
+    "lng": -2.2935288 
   },
-  {
+   {
     "code": "THFC",
     "stadiumName": "White Hart Lane",
     "city": "London",
     "lat": 51.6032123,
-    "lng": -0.0679276
+    "lng": -0.0679276 
   },
   {
     "code": "AFCB",
@@ -82,47 +82,47 @@
     "city": "Swansea",
     "lat": 51.6427499,
     "lng": -3.9367742
-  },
+   }, 
   {
     "code": "NUFC",
     "stadiumName": "St. James' Park",
     "city": "Newcastle",
     "lat": 54.975556,
     "lng": -1.6238557
-  },
+   },
   {
     "code": "AFC",
     "stadiumName": "Emirates Stadium",
     "city": "London",
     "lat": 51.5548885,
-    "lng": -0.1106267
+    "lng": -0.1106267 
   },
   {
     "code": "WHU",
     "stadiumName": "London Stadium",
     "city": "London",
     "lat": 51.5386466,
-    "lng": -0.0187137
-  },
+    "lng": -0.0187137 
+  }, 
   {
     "code": "SCFC",
     "stadiumName": "bet365 Stadium",
     "city": "Stoke",
     "lat": 52.9880739,
     "lng": -2.1788224
-  },
+   },
   {
     "code": "WBA",
     "stadiumName": "West Bromwich Albion Football Club",
     "city": "West Bromwich",
     "lat": 52.509038,
-    "lng": -1.9661267
+    "lng": -1.9661267 
   },
   {
     "code": "MCFC",
     "stadiumName": "Etihad Stadium",
     "city": "Manchester",
     "lat": 53.4831381,
-    "lng": -2.202584
-  }
+    "lng": -2.202584 
+  } 
 ] 
