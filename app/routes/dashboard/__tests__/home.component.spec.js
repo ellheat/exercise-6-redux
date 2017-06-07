@@ -1,13 +1,10 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 import { fromJS } from 'immutable';
 
 import Home from '../dashboard.component';
-import messages from '../dashboard.messages';
 
 
 describe('Home: Component', () => {
