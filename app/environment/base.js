@@ -7,8 +7,8 @@ export default {
     },
     weather: {
       key: '8ff684652337bb908b03ddb15f42a228',
-      url: 'http://api.openweathermap.org/data/2.5/weather'
-    }
+      url: 'http://api.openweathermap.org/data/2.5/weather',
+    },
   },
   imagesApi: {
     key: 'rj5w8w45nz3sfjnbwkxpwx27',

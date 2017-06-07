@@ -2,7 +2,6 @@ import envConfig from 'env-config';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { WeatherTypes, WeatherActions } from './weather.redux';
 import request from '../../utils/request';
-import { round } from 'lodash';
 
 export function* fetchWeatherSaga(cords) {
   try {
