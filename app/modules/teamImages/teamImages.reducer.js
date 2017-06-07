@@ -11,25 +11,23 @@ const StateRecord = new Record({
 
 const INITIAL_STATE = new StateRecord();
 
-const getTeamImages = (state = INITIAL_STATE) => state.merge({
+const getTeamImages = (state) => state.merge({
   images: fromJS([]),
   isLoading: true,
 });
 
-const teamImagesSuccess = (state = INITIAL_STATE, action) => state.merge({
+const teamImagesSuccess = (state, action) => state.merge({
   images: fromJS(action.payload.images),
   isLoading: false,
 });
 
-const teamImagesError = (state = INITIAL_STATE, action) => state.merge({
+const teamImagesError = (state, action) => state.merge({
   error: action.payload.error,
   isLoading: false,
 });
 
-const HANDLERS = {
+export default createReducer(INITIAL_STATE, {
   [teamImagesActionsTypes.GET_TEAM_IMAGES]: getTeamImages,
   [teamImagesActionsTypes.GET_TEAM_IMAGES_SUCCESS]: teamImagesSuccess,
   [teamImagesActionsTypes.GET_TEAM_IMAGES_ERORR]: teamImagesError,
-};
-
-export default createReducer(INITIAL_STATE, HANDLERS);
+});
