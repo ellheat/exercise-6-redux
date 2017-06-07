@@ -1,7 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { round } from 'lodash';
 import { FormattedMessage } from 'react-intl';
-import messages from './weather.messages'
+import messages from './weather.messages';
 
 const KELVIN_AVERAGE = 273.15;
 
@@ -42,11 +42,11 @@ export default class Weather extends PureComponent {
     return (
       <div className="weather">
         <div>
-          <FormattedMessage {...messages.name} values={{name: weather.get('name')}} />
+          <FormattedMessage {...messages.name} values={{ name: weather.get('name') }} />
         </div>
         <div>
           <FormattedMessage {...messages.temperature}
-                            values={{value: this.temperatureConverter(weather.getIn(['main', 'temp']))}}
+                            values={{ value: this.temperatureConverter(weather.getIn(['main', 'temp'])) }}
           />
         </div>
       </div>
