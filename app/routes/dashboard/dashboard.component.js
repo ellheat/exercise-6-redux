@@ -9,6 +9,8 @@ export default class Dashboard extends PureComponent {
     teams: PropTypes.object,
     getTeams: PropTypes.func.isRequired,
     router: PropTypes.object.isRequired,
+    changeTeam: PropTypes.func.isRequired,
+    currentTeam: PropTypes.string,
   };
 
   componentWillMount() {
@@ -24,7 +26,11 @@ export default class Dashboard extends PureComponent {
           <div className="dashboard__container">
 
           <div className="dashboard__container-teams">
-            <TeamsList items={this.props.teams} />
+            <TeamsList
+              items={this.props.teams}
+              onItemClick={this.props.changeTeam}
+              currentTeam={this.props.currentTeam}
+            />
           </div>
           <div className="dashboard__container-content">
             <Content />

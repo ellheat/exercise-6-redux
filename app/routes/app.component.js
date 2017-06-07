@@ -1,7 +1,6 @@
 import React, { PropTypes, PureComponent } from 'react';
 import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-import { get } from 'lodash';
 import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
 import theme from './../assets/react-toolbox/theme';
 
@@ -21,7 +20,7 @@ class App extends PureComponent {
 
         <IntlProvider
           locale="en"
-          messages={translationMessages["en"]}
+          messages={translationMessages.en}
         >
           <ThemeProvider theme={theme}>
             {React.Children.only(this.props.children)}
