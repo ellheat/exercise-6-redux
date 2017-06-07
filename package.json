@@ -115,7 +115,7 @@
     "redux-devtools-log-monitor": "^1.2.0",
     "redux-immutable": "3.0.8",
     "redux-logger": "^2.8.2",
-    "redux-saga": "0.14.0",
+    "redux-saga": "^0.15.3",
     "reduxsauce": "^0.4.1",
     "reselect": "2.5.4",
     "whatwg-fetch": "2.0.1"
