@@ -4,11 +4,14 @@ import { FormattedMessage } from 'react-intl';
 
 import messages from './content.messages';
 import GoogleMaps from '../googleMaps/googleMaps.component';
+import Weather from '../weather/weather.component';
 import TeamImages from '../../../components/teamImages/teamImages.container';
 
 export default class Content extends PureComponent {
   static propTypes = {
     stadium: PropTypes.object,
+    weather: PropTypes.object,
+    fetchWeather: PropTypes.func,
   };
 
   state = {
@@ -20,7 +23,7 @@ export default class Content extends PureComponent {
   };
 
   render() {
-    const { stadium } = this.props;
+    const { stadium, weather, fetchWeather } = this.props;
 
     return (
       <section>
@@ -28,7 +31,9 @@ export default class Content extends PureComponent {
           <Tab label={<FormattedMessage {...messages.map} />}>
             <GoogleMaps stadium={stadium} />
           </Tab>
-          <Tab label={<FormattedMessage {...messages.weather} />}><small>Weather content</small></Tab>
+          <Tab label={<FormattedMessage {...messages.weather} />}>
+            <Weather stadium={stadium} weather={weather} fetchWeather={fetchWeather} />
+          </Tab>
           <Tab label={<FormattedMessage {...messages.photos} />}>
             <TeamImages />
           </Tab>

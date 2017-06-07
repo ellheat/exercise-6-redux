@@ -3,7 +3,6 @@ import GoogleMapReact from 'google-map-react';
 
 const DEFAULT_ZOOM = 17;
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default class googleMaps extends PureComponent {
   static propTypes = {
@@ -33,11 +32,6 @@ export default class googleMaps extends PureComponent {
           language: 'pl',
         }}
       >
-        <AnyReactComponent
-          lat={stadium.lat}
-          lng={stadium.lng}
-          text={stadium.stadiumName}
-        />
       </GoogleMapReact>
     );
   }
