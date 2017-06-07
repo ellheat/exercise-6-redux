@@ -19,6 +19,8 @@ export default class Dashboard extends PureComponent {
   }
 
   render() {
+    const { stadium, teams, changeTeam, currentTeam } = this.props;
+
     return (
       <div className="dashboard">
         <Helmet
@@ -28,9 +30,9 @@ export default class Dashboard extends PureComponent {
 
           <div className="dashboard__container-teams">
             <TeamsList
-              items={this.props.teams}
-              onItemClick={this.props.changeTeam}
-              currentTeam={this.props.currentTeam}
+              items={teams}
+              onItemClick={changeTeam}
+              currentTeam={currentTeam}
             />
           </div>
           <div className="dashboard__container-content">
