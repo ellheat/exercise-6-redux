@@ -10,7 +10,7 @@ const StateRecord = new Record({
 
 const INITIAL_STATE = new StateRecord();
 
-const changeTeam = (state, action) => state.merge({
+const changeTeam = (state = INITIAL_STATE, action) => state.merge({
   name: action.payload.name,
   title: action.payload.title,
 });
