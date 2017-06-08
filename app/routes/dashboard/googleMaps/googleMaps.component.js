@@ -1,7 +1,7 @@
 import React, { PropTypes, PureComponent } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const DEFAULT_ZOOM = 17;
+const DEFAULT_ZOOM = 5;
 
 
 export default class googleMaps extends PureComponent {

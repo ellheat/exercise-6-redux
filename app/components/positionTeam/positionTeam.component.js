@@ -2,6 +2,8 @@ import React, { PropTypes, PureComponent } from 'react';
 import _isUndefined from 'lodash/isUndefined';
 import GoogleMapReact from 'google-map-react';
 
+import { PinComponent } from './pin.component';
+
 export default class PositionTeam extends PureComponent {
 
   static propTypes = {
@@ -35,23 +37,27 @@ export default class PositionTeam extends PureComponent {
     }
     return (
       <div className="team-images">
-        { this.isLoading() }
+        {this.isLoading()}
         {this.props.results.map((data, key) => {
           return (
             <GoogleMapReact
               key={key}
               style={{
-                height: 800,
+                height: 700,
                 width: '100%',
                 position: 'relative',
               }}
               defaultCenter={{ lat: this.getLat(data).get('lat'), lng: this.getLat(data).get('lng') }}
-              defaultZoom={12}
+              defaultZoom={15}
               bootstrapURLKeys={{
                 key: 'AIzaSyDa5m3X_UYL4hmqZ-9ohlXg8JP7HBHWTVg',
                 language: 'pl',
               }}
             >
+              <PinComponent
+                lat={this.getLat(data).get('lat')}
+                lng={this.getLat(data).get('lng')}
+              />
             </GoogleMapReact>
           );
         })}
