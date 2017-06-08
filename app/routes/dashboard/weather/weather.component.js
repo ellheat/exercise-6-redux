@@ -1,8 +1,6 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { round } from 'lodash';
-import { FormattedMessage } from 'react-intl';
 import { Card, CardTitle, CardText } from 'react-toolbox/lib/card';
-import messages from './weather.messages';
 
 const KELVIN_AVERAGE = 273.15;
 
@@ -42,7 +40,7 @@ export default class Weather extends PureComponent {
 
     return (
       <div className="weather">
-        <Card className="weather__card weather__card--main" style={{width: '350px'}}>
+        <Card className="weather__card weather__card--main" style={{ width: '350px' }}>
           <CardTitle
             avatar={`http://openweathermap.org/img/w/${weather.getIn(['weather', 0, 'icon'])}.png`}
             title={weather.getIn(['weather', 0, 'main'])}
@@ -56,7 +54,7 @@ export default class Weather extends PureComponent {
           </CardText>
         </Card>
 
-        <Card style={{width: '350px'}}>
+        <Card style={{ width: '350px' }}>
           <CardTitle
             title="Clouds"
           >
@@ -68,7 +66,7 @@ export default class Weather extends PureComponent {
           </CardText>
         </Card>
 
-        <Card style={{width: '350px'}}>
+        <Card style={{ width: '350px' }}>
           <CardTitle
             title="Wind"
           >
@@ -80,7 +78,7 @@ export default class Weather extends PureComponent {
           </CardText>
         </Card>
 
-        <Card style={{width: '350px'}}>
+        <Card style={{ width: '350px' }}>
           <CardTitle
             title="Humidity"
           >
@@ -92,7 +90,7 @@ export default class Weather extends PureComponent {
           </CardText>
         </Card>
 
-        <Card style={{width: '350px'}}>
+        <Card style={{ width: '350px' }}>
           <CardTitle
             title="Pressure"
           >
