@@ -5,6 +5,7 @@ import teamsReducer from './teams/teams.reducer';
 import teamReducer from './team/team.reducer';
 import teamImagesReducer from './teamImages/teamImages.reducer';
 import positionTeamReducer from './positionTeam/positionTeam.reducer';
+import { reducer as weatherReducer } from './weather/weather.redux';
 
 
 export default function createReducer() {
@@ -14,5 +15,6 @@ export default function createReducer() {
     team: teamReducer,
     teamImages: teamImagesReducer,
     positionTeam: positionTeamReducer,
+    weather: weatherReducer,
   });
 }

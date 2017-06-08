@@ -3,5 +3,7 @@
   "home.welcome": "Welcome to Sergusie Team Application!",
   "content.map": "Map",
   "content.weather": "Weather",
-  "content.photos": "Photos"
+  "content.photos": "Photos",
+  "weather.name": "Name: {name}",
+  "weather.temperature": "Temperature: {value} °C"
 }

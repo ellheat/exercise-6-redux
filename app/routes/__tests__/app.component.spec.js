@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow, mount } from 'enzyme';
-import { spy } from 'sinon';
+import { shallow } from 'enzyme';
 import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 
@@ -29,11 +28,6 @@ describe('App: Component', () => {
       {children}
     </App>
   );
-
-  // it('should not render App when language is not set', () => {
-  //   const wrapper = shallow(component({ language: undefined }));
-  //   expect(wrapper.find('.app')).to.have.length(0);
-  // });
 
   it('should render App when language is set', () => {
     const wrapper = shallow(component({ language: 'en' }));
@@ -69,6 +63,7 @@ describe('App: Component', () => {
 
   it('should render children inside <IntlProvider/>', () => {
     const wrapper = shallow(component({}));
+
     expect(wrapper.find(IntlProvider).contains(children)).to.be.true;
   });
 });

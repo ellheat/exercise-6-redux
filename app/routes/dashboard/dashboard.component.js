@@ -11,6 +11,9 @@ export default class Dashboard extends PureComponent {
     router: PropTypes.object.isRequired,
     changeTeam: PropTypes.func.isRequired,
     currentTeam: PropTypes.string,
+    stadium: PropTypes.object,
+    weather: PropTypes.object,
+    fetchWeather: PropTypes.func,
   };
 
   componentWillMount() {
@@ -18,6 +21,8 @@ export default class Dashboard extends PureComponent {
   }
 
   render() {
+    const { stadium, teams, changeTeam, currentTeam, weather, fetchWeather } = this.props;
+
     return (
       <div className="dashboard">
         <Helmet
@@ -27,13 +32,13 @@ export default class Dashboard extends PureComponent {
 
           <div className="dashboard__container-teams">
             <TeamsList
-              items={this.props.teams}
-              onItemClick={this.props.changeTeam}
-              currentTeam={this.props.currentTeam}
+              items={teams}
+              onItemClick={changeTeam}
+              currentTeam={currentTeam}
             />
           </div>
           <div className="dashboard__container-content">
-            <Content />
+            <Content stadium={stadium} weather={weather} fetchWeather={fetchWeather} />
           </div>
         </div>
       </div>
