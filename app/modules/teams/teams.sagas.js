@@ -4,6 +4,7 @@ import envConfig from 'env-config';
 
 import request from '../../utils/request';
 import { teamsActions, teamsActionsTypes } from './teams.actions';
+import { teamActions } from '../team/team.actions';
 
 
 export function* fetchTeamsSaga() {
@@ -17,6 +18,11 @@ export function* fetchTeamsSaga() {
   try {
     const data = yield call(request, `${envConfig.api.baseUrl}${envConfig.api.urls.teams}`, sagaFetchingOptions);
     yield put(teamsActions.getTeamsSuccess(data));
+    yield put(teamActions.changeTeam({
+      name: data.teams[0].shortName,
+      title: data.teams[0].name,
+      code: data.teams[0].code,
+    }));
   } catch (e) {
     yield put(teamsActions.getTeamsError(e));
   }
