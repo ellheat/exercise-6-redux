@@ -133,15 +133,15 @@ module.exports = (options) => {
     performance: options.performance || {},
   };
 
-  if (process.env.SHOW_VERSION) {
-    webpackConfig.plugins.push(
-      new WebpackAppversionPlugin({
-        entries: ['main'],
-        version: '1.0.0',
-        isOpen: true,
-      })
-    );
-  }
+  // if (process.env.SHOW_VERSION) {
+  //   webpackConfig.plugins.push(
+  //     new WebpackAppversionPlugin({
+  //       entries: ['main'],
+  //       version: '1.0.0',
+  //       isOpen: true,
+  //     })
+  //   );
+  // }
 
   return webpackConfig;
 };
