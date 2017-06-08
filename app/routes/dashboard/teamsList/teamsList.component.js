@@ -30,6 +30,7 @@ export default class TeamsList extends PureComponent {
             onClick={() => this.onClick(item)}
             avatar={item.get('crestUrl')}
             className={classnames({
+              'teams-list__item': true,
               'teams-list__item--current': (item.get('shortName') === this.props.currentTeam),
             })}
           />
