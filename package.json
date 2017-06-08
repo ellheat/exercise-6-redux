@@ -195,7 +195,8 @@
       "MENU",
       "NAVIGATION",
       "LINK",
-      "DROPDOWN"
+      "DROPDOWN",
+      "CARD"
     ],
     "customProperties": {
       "animation-duration": "0.3s",
