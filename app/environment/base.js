@@ -17,4 +17,7 @@ export default {
       search: '/search/images',
     },
   },
+  positionApi: {
+    baseUrl: 'http://maps.google.com/maps/api/geocode/json',
+  },
 };

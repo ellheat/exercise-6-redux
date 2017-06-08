@@ -1,9 +1,8 @@
 import React, { PropTypes, PureComponent } from 'react';
-import { Tab, Tabs } from 'react-toolbox/lib/tabs';
 import { FormattedMessage } from 'react-intl';
-
+import { Tab, Tabs } from 'react-toolbox/lib/tabs';
+import PositionTeam from '../../../components/positionTeam/positionTeam.container';
 import messages from './content.messages';
-import GoogleMaps from '../googleMaps/googleMaps.component';
 import Weather from '../weather/weather.component';
 import TeamImages from '../../../components/teamImages/teamImages.container';
 
@@ -16,6 +15,7 @@ export default class Content extends PureComponent {
 
   state = {
     currentIndex: 1,
+    fixedIndex: 0,
   };
 
   handleFixedTabChange = (index) => {
@@ -29,7 +29,7 @@ export default class Content extends PureComponent {
       <section>
         <Tabs index={this.state.currentIndex} onChange={this.handleFixedTabChange} fixed>
           <Tab label={<FormattedMessage {...messages.map} />}>
-            <GoogleMaps stadium={stadium} />
+            <PositionTeam />
           </Tab>
           <Tab label={<FormattedMessage {...messages.weather} />}>
             <Weather stadium={stadium} weather={weather} fetchWeather={fetchWeather} />

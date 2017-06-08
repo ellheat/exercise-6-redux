@@ -36,7 +36,6 @@ export function* updateTeamImagesSaga(action) {
   const data = {
     team: action.payload.title,
   };
-
   yield put(teamImagesActions.getTeamImages(data));
 }
 
