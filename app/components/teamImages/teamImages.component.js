@@ -4,13 +4,8 @@ export default class TeamImages extends PureComponent {
 
   static propTypes = {
     images: PropTypes.object.isRequired,
-    getImages: PropTypes.func.isRequired,
     team: PropTypes.string,
     isLoading: PropTypes.bool,
-  };
-
-  componentWillMount = () => {
-    this.props.getImages({ team: this.props.team });
   };
 
   getThumb = (image) => {
